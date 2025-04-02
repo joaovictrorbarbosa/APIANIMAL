@@ -48,4 +48,4 @@ def remover_animal(animal_id: str):
         return {'error' : 'animal não localizado'}
 
 
-uvicorn.run(app, host="127.0.0.1", port = 8090)
+uvicorn.run(app, host="127.0.0.1", port = 8086)
