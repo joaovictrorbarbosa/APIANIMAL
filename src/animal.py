@@ -3,8 +3,19 @@ import uvicorn
 from pydantic import BaseModel
 from typing import List, Optional
 from uuid import uuid4
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app =FastAPI()
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class Animal(BaseModel):
     id: Optional[str]
